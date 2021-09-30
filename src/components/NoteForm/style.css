@@ -1,0 +1,13 @@
+.note-form {
+  width: 100%;
+}
+
+.note-form input, .note-form textarea {
+  width: 100%;
+  margin: 0px 0px 4px;
+}
+
+.note-form textarea {
+  resize: none;
+  height: 150px;
+}

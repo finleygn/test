@@ -1,0 +1,11 @@
+.note {
+  margin-bottom: 24px;
+}
+
+.note:last-child {
+  margin-bottom: 0;;
+}
+
+.note h4 {
+  margin: 4px 0;
+}
