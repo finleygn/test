@@ -11,8 +11,6 @@ function App() {
   const handleSaveNote = (note) => {
     // Update notes state
     setNotes(prevNotes => [...prevNotes, note]);
-
-    createAlert(`Created note "${lastNote?.title}"`);
   }
 
   useEffect(() => {
