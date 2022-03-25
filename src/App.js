@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import Note from './components/Note';
 import NoteForm from './components/NoteForm';
 import { AlertContext } from './components/AlertProvider';
@@ -11,11 +11,15 @@ function App() {
   const handleSaveNote = (note) => {
     // Update notes state
     setNotes(prevNotes => [...prevNotes, note]);
-
-    // Show latest added note in alert
-    const lastNote = notes[notes.length - 1];
-    createAlert(`Created note "${lastNote?.title}"`);
   }
+
+  useEffect(() => {
+    if(notes.length > 0) {
+      // Show latest added note in alert
+      const lastNote = notes[notes.length - 1];
+      createAlert(`Created note "${lastNote?.title}"`);
+    }
+  }, [notes.length])
 
   const handleDeleteNote = (note) => {
     setNotes(prevNotes => prevNotes.filter(item => item !== note));

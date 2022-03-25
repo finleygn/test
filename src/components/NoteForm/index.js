@@ -15,6 +15,7 @@ function NoteForm({ saveNote }) {
 
     setTitle("");
     setContent("");
+    e.target.reset();
   }
 
   const disabled = !title || !content;
